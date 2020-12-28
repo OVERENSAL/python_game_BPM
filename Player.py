@@ -1,11 +1,12 @@
 import pygame
+from Display import Display
 
-display_width = 600
-display_height = 600
+display_width = Display.display_width
+display_height = Display.display_height
 
-display = pygame.display.set_mode((display_width, display_width))
+display = pygame.display.set_mode((display_width, display_height))
 
-moveSpeed = 2
+moveSpeed = 4
 slowdownMoveSpeed = moveSpeed // 2
 
 class Player:
@@ -38,15 +39,23 @@ class Player:
         if (slowdown == True):
             if (self.x - slowdownMoveSpeed > 0):
                 self.x -= slowdownMoveSpeed
+            else:
+                self.x = display_width
         else:
             if (self.x - moveSpeed > 0):
                 self.x -= moveSpeed
+            else:
+                self.x = display_width
 
     def moveRight(self, slowdown):
         global moveSpeed, slowdownMoveSpeed
         if (slowdown == True):
             if (self.x + slowdownMoveSpeed < display_width - self.width):
                 self.x += slowdownMoveSpeed
+            else:
+                self.x = 0
         else:
             if (self.x + moveSpeed < display_width - self.width):
                 self.x += moveSpeed
+            else:
+                self.x = 0
