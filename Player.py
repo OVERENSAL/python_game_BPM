@@ -6,56 +6,23 @@ display_height = Display.display_height
 
 display = pygame.display.set_mode((display_width, display_height))
 
-moveSpeed = 4
-slowdownMoveSpeed = moveSpeed // 2
-
 class Player:
     def __init__(self, x, y, width, height):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
+    hp = 3
+    line1 = display_width // 2 - 108
+    #line2 = display_width // 2 - 54
+    #line3 = display_width // 2
+    #line4 = display_width // 2 + 54
+    line5 = display_width // 2 + 108
 
-    def moveUp(self, slowdown):
-        global moveSpeed, slowdownMoveSpeed
-        if (slowdown == True):
-            if (self.y - slowdownMoveSpeed > 100):
-                self.y -= slowdownMoveSpeed
-        else:
-            if (self.y - moveSpeed > 100):
-                self.y -= moveSpeed
+    def moveLeft(self):
+        if(self.x != self.line1):
+            self.x -= 54 
 
-    def moveDown(self, slowdown):
-        global moveSpeed, slowdownMoveSpeed
-        if (slowdown == True):
-            if (self.y + slowdownMoveSpeed < display_height - self.height):
-                self.y += slowdownMoveSpeed
-        else:
-            if (self.y + moveSpeed < display_height - self.height):
-                self.y += moveSpeed
-
-    def moveLeft(self, slowdown):
-        global moveSpeed, slowdownMoveSpeed
-        if (slowdown == True):
-            if (self.x - slowdownMoveSpeed > 0):
-                self.x -= slowdownMoveSpeed
-            else:
-                self.x = display_width
-        else:
-            if (self.x - moveSpeed > 0):
-                self.x -= moveSpeed
-            else:
-                self.x = display_width
-
-    def moveRight(self, slowdown):
-        global moveSpeed, slowdownMoveSpeed
-        if (slowdown == True):
-            if (self.x + slowdownMoveSpeed < display_width - self.width):
-                self.x += slowdownMoveSpeed
-            else:
-                self.x = 0
-        else:
-            if (self.x + moveSpeed < display_width - self.width):
-                self.x += moveSpeed
-            else:
-                self.x = 0
+    def moveRight(self):
+        if(self.x != self.line5):
+            self.x += 54
