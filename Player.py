@@ -12,12 +12,12 @@ class Player:
         self.y = y
         self.width = width
         self.height = height
-    hp = 3
-    line1 = display_width // 2 - 108
+    hp = 100
+    line1 = display_width // 2 - 108 - 7
     #line2 = display_width // 2 - 54
     #line3 = display_width // 2
     #line4 = display_width // 2 + 54
-    line5 = display_width // 2 + 108
+    line5 = display_width // 2 + 108 - 7
 
     def moveLeft(self):
         if(self.x != self.line1):

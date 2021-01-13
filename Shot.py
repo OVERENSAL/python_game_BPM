@@ -23,6 +23,6 @@ class Shot:
         return False
 
     def isShotTouchPoint(self, pointX, pointY):
-        if((pointX - self.x)^2 + (pointY - self.y)^2 == self.radius^2):
+        if((pointX - self.x)**2 + (pointY - self.y)**2 <= self.radius**2):
             return True
         return False

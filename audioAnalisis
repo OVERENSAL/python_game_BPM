@@ -5,13 +5,13 @@ import time
 import pygame
 from pathlib import Path
 from subprocess import call
-music_file_name = r"F:\pro\pythonZXC\python_game_BPM\qwe.wav"
+music_file_name = r"F:\pro\pythonZXC\python_game_BPM\1234.wav"
 songs_file = ''
 lame_path = 'lame.exe'
 screen_w = 1000
 screen_h = 750
-percentage_displayed_f = 0.5                                                                               #Percentage of frequencies to show (Removes higher frequencies) Range = [0, 1]
-max_height_percentile = 99.5
+percentage_displayed_f = 0.007                                                                              #Percentage of frequencies to show (Removes higher frequencies) Range = [0, 1]
+max_height_percentile = 80
 fftlength = 2048
 entertainment = False
 
